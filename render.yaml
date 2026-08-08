@@ -18,8 +18,11 @@ services:
         value: "true"
       # PORT is provided by Render automatically; the app reads process.env.PORT.
       # ── Non-secret config (set to the FINAL onrender.com host after first deploy) ──
+      # QuickBooks environment. Must match the credentials in QUICKBOOKS_CLIENT_ID/
+      # SECRET and the tab where QUICKBOOKS_REDIRECT_URI is registered in the Intuit
+      # app (Production vs Development). Change to "sandbox" for sandbox testing.
       - key: QUICKBOOKS_ENVIRONMENT
-        value: sandbox
+        value: production
       - key: WORKOS_ISSUER
         value: https://sincere-peacock-34-staging.authkit.app
       - key: MCP_RESOURCE_URL
