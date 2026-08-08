@@ -1,4 +1,5 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { FINLENS_ICON_DATA_URI } from "./finlens-icon.js";
 
 export class QuickbooksMCPServer {
   private static instance: McpServer | null = null;
@@ -15,6 +16,16 @@ export class QuickbooksMCPServer {
       {
         name: "Finlens QB Online MCP Server",
         version: "1.0.0",
+        // MCP `icons` on serverInfo: lets clients show the Finlens logo as the
+        // connector icon via the protocol, instead of guessing a favicon from
+        // the hosting domain (which resolved to the Render logo).
+        icons: [
+          {
+            src: FINLENS_ICON_DATA_URI,
+            mimeType: "image/png",
+            sizes: ["128x128"],
+          },
+        ],
       },
       {
         capabilities: {
