@@ -44,9 +44,7 @@ export function makeAuthTenantResolver(
     // Observability: confirms distinct WorkOS users map to distinct tenants
     // (a collision here would mean the token's `sub` isn't per-user).
     // eslint-disable-next-line no-console
-    console.info(
-      `[tenant] workosUser=${authInfo.workosUserId} org=${authInfo.workosOrgId ?? "-"} -> tenant=${tenantId}`,
-    );
+    console.info(`[tenant] workosUser=${authInfo.workosUserId} -> tenant=${tenantId}`);
 
     return {
       tenantId,
